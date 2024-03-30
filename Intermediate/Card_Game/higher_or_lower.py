@@ -19,16 +19,19 @@ def shuffle(decklistin:list)->list:
     random.shuffle(decklistout)
     return decklistout
 
+print('Welcome to Higher or Lower.')
+print('You have to choose whether the next card to be shown will be higher or lower than the current card.')
+print('Getting it right adds 20 points; get it wrong and you lose 15 points.')
+print('You have 50 points to start.')
 
 for suit in suits_tuple:
     for value,rank in enumerate(ranks_tuple):
         card_dic = {"suit":suit, "rank":rank, "value":value + 1}
         cardlist.append(card_dic)
 
-while True:
+while True:  #To play multiple games
     shuffle_list = shuffle(cardlist)
     currentcarddict = getcard(shuffle_list)
-    print(currentcarddict)
     currentcardrank = currentcarddict["rank"]
     currentcardsuit = currentcarddict["suit"]
     currentcardvalue = currentcarddict["value"]
@@ -36,11 +39,10 @@ while True:
 
 
     for cardnumber in range(0,NCARDS):
-        num = input("Will the next card will have higher or lower value = ")
+        num = input("Will the next card be higher or lower than the " + currentcardrank + " of " + currentcardsuit + "? (enter h or l):")
         answer = num.lower()
 
         nextcarddict = getcard(shuffle_list)
-        print(nextcarddict)
         nextcardrank = nextcarddict["rank"]
         nextcardsuit = nextcarddict["suit"]
         nextcardvalue = nextcarddict["value"]
@@ -62,8 +64,10 @@ while True:
 
         print("Your Score is = ", score)
 
-    goagain = input("Do you Want to play Again? = ")
-    if goagain == "q":
+    goagain = input("Do you Want to play Again?, press c to continue, or q to quit ")
+    if goagain == "c":
+        continue
+    elif goagain == "q":
         break
 
             
