@@ -1,3 +1,10 @@
+"""When the game starts all of the cards are all face down in rows and columns. You click on a card to select it and it turns over to show the suit and rank (value). 
+Then you click another card to select it and it also turns face up.
+If the two cards match (have the same rank and value) then the cards stay facing up. 
+Otherwise they both turn down and you take another turn. 
+You win when you have found all of the matches. 
+The game keeps track of the total time it took you to find all of the matches."""
+
 class Card():
 
     suit_names = ["Clubs", "Spades", "Diamond", "Hearts"]
