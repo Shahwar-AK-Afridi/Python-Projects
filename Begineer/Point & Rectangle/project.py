@@ -31,11 +31,19 @@ class Rectangle:
         width = abs(self.p1.y - self.p2.y)
         area_of_rectangle = length * width
         return area_of_rectangle
-    
-point1 = Point(10, 12)
-point2 = Point(5, 6)
 
-r1 = Rectangle(point1, point2)
 
-print("Area of Reactangle:", r1.area())
+def main():    
+    point1 = Point(10, 12)
+    point2 = Point(5, 6)
+    r1 = Rectangle(point1, point2)
+    area_of_rec = r1.area()
+    return area_of_rec
+
+if __name__ == "__main__":
+    abc = main()
+    print("Area of Reactangle:", abc)
+
+
     
+
